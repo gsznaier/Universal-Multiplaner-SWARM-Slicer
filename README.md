@@ -1,4 +1,4 @@
-# Universal Multiplayer SWARM Slicer
+# Universal Multiplaner SWARM Slicer
 
 ## Installation
 
@@ -6,8 +6,8 @@ To install the software dependencies, run the following commands in your termina
 
 ```bash
 # Clone the repository
-git clone [https://github.com/gsznaier/Universal-Multiplayer-SWARM-Slicer.git](https://github.com/gsznaier/Universal-Multiplayer-SWARM-Slicer.git)
-cd Universal-Multiplayer-SWARM-Slicer
+git clone [https://github.com/gsznaier/Universal-Multiplaner-SWARM-Slicer.git](https://github.com/gsznaier/Universal-Multiplaner-SWARM-Slicer.git)
+cd Universal-Multiplaner-SWARM-Slicer
 
 # Create and activate conda environment
 conda env create -f environment.yml
