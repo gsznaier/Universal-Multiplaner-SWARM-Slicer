@@ -1,0 +1,15 @@
+{
+"0":{"printer_id": 0,
+    "origin": [0,0,128.4],
+    "normal": [0,0,-1],
+    "resolution": 1.0,
+    "CTR radius": 0.8128,
+    "safety radius": 8,
+    "coeffs": [[0.00002887, 0.009456, -0.005471, 0.08073],
+                [-0.00003014, 0.001152, 0.9948, 0.1119],
+                70],
+    "shell_method": "cylindrical",
+    "planning_method": "contour",
+    "color": "seismic"
+    }
+    }

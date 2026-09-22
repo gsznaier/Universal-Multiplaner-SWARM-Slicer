@@ -1,0 +1,57 @@
+{
+"0":{"printer_id": 0,
+    "origin": [0,69.6,0],
+    "normal": [0,-1,0],
+    "resolution":1,
+    "CTR radius": 0.8128,
+    "safety radius": 8,
+    "coeffs": [[0.00004866,    0.0121, -0.03279, -0.03755], 
+                [-0.00005231, 0.001656, 1.01, -0.1633],
+                26],
+    "shell_method": "cylindrical",
+    "planning_method": "contour",
+    "color": "BrBG"
+    },
+
+"1":{"printer_id": 1,
+    "origin": [0,-69.6,0],
+    "normal": [0,1,0],
+    "resolution":1,
+    "CTR radius": 0.8128,
+    "safety radius": 8,
+    "coeffs": [[0.00005807, 0.01287, -0.04093, -0.02138], 
+                [-0.00004874, 0.002333, 1.02, 0.1888],
+                26],
+    "shell_method": "cylindrical",
+    "planning_method": "contour",
+    "color": "RdYlBu"
+    },
+    
+"2":{"printer_id": 2,
+    "origin": [69.6,0,0],
+    "normal": [-1,0,0],
+    "resolution":1,
+    "CTR radius": 0.8128,
+    "safety radius": 8,
+    "coeffs": [[0.00005275, 0.01267, -0.01493, -0.001353], 
+                [-0.00005139, 0.002023, 1.026, 0.02034],
+                26],
+    "shell_method": "cylindrical",
+    "planning_method": "contour",
+    "color": "PRGn"
+    },
+    
+"3":{"printer_id": 3,
+    "origin": [-69.6,0,0],
+    "normal": [1,0,0],
+    "resolution":1,
+    "CTR radius": 0.8128,
+    "safety radius": 8,
+    "coeffs": [[0.00006604, 0.01443, 0.03237, 0.1908], 
+                [-0.00005334, 0.001915, 1.045, 0.0527],
+                26],
+    "shell_method": "cylindrical",
+    "planning_method": "contour",
+    "color": "RdYlGn"
+    }
+    }

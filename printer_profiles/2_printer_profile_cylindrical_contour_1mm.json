@@ -1,0 +1,29 @@
+{
+"0":{"printer_id": 0,
+    "origin": [0,0,98.4],
+    "normal": [0,0,-1],
+    "resolution":1,
+    "CTR radius": 0.8128,
+    "safety radius": 8,
+    "coeffs": [[0.00002887, 0.009456, -0.005471, 0.08073],
+                [-0.00003014, 0.001152, 0.9948, 0.1119],
+                40],
+    "shell_method": "cylindrical",
+    "planning_method": "contour",
+    "color": "seismic"
+    },
+
+"1":{"printer_id": 1,
+    "origin": [0,0,-98.4],
+    "normal": [0,0,1],
+    "resolution":1,
+    "CTR radius": 0.8128,
+    "safety radius": 8,
+    "coeffs": [[0.00002192, 0.008676, -0.02238, -0.01258], 
+                [-0.00003349, 0.0006771, 1.003, 0.09084],
+                40],
+    "shell_method": "cylindrical",
+    "planning_method": "contour",
+    "color": "PiYG"
+    }
+    }

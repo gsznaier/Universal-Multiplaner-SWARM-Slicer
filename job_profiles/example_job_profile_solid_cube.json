@@ -1,0 +1,15 @@
+{
+"job_names": ["cube"],
+"stl_names": ["../dataset/cube.stl"],
+"printer_profiles":["../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json"],
+"obj_scale":5.0,
+"sim_scale": 1.0,
+"velocity": 50.0,
+"desired_print_time": 1.0,
+"load_data": false,
+"load_data_path": "../results/shells",
+"use_fast_sdf": false,
+"follow_surface":false,
+"add_safety": true,
+"fast_collision_check": true
+}
