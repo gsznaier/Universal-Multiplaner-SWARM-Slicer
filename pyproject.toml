@@ -4,7 +4,7 @@ version = "0.0.1"
 authors = [
   { name="Gadiel Sznaier Camps", email="gsznaier@stanford.edu" },
 ]
-description = "Universal Multiplayer SWARM Slicer: A slicer for multi-axis, multi-CTR printing."
+description = "Universal Multiplaner SWARM Slicer: A slicer for multi-axis, multi-CTR printing."
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
@@ -14,8 +14,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/gsznaier/Universal-Multiplayer-SWARM-Slicer"
-Issues = "https://github.com/gsznaier/Universal-Multiplayer-SWARM-Slicer/issues"
+Homepage = "https://github.com/gsznaier/Universal-Multiplaner-SWARM-Slicer"
+Issues = "https://github.com/gsznaier/Universal-Multiplaner-SWARM-Slicer/issues"
 
 [build-system]
 requires = ["setuptools>=61.0"]
