@@ -65,7 +65,7 @@ Only `cube.stl` is included in this repository. The STL files used in the manusc
 
 ## Visualizing print paths
 
-Generated print paths can be viewed interactively with `plot_paths.py`.
+Generated print paths can be viewed interactively with `plot_paths.py`. The print paths used in the manuscript are included and can be visualized without slicing.
 
 ```bash
 python plot_paths.py --job_names <job_name> --printer_profiles ../printer_profiles/<N>_printer_profile_<profile_type>.json --load_data_path ../results/shells
@@ -138,5 +138,5 @@ These values are set at the top of `plot_print_times.py`.
 
 ## Tested software Versions
 
-* **Operating System:** Ubuntu 18.04.6 LTS, Windows 11 Education
+* **Operating systems:** Ubuntu 18.04.6 LTS, Windows 11 Education
 * **Python:** 3.10
