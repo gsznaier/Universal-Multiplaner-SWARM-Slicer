@@ -34,15 +34,13 @@ pip install -e .
 ---
 ## Run instructions
 
-Execute the slicer by passing parameters directly through the command line:
+Execute the slicer by passing the parameters below directly through the command line. Slicing is computationally intensive and can take several hours to complete, depending on the geometry and your hardware.
 
 ```bash
 cd slicer
-python main.py --job_names cube --stl_names ../dataset/cube.stl --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json
+python main.py --job_names cube --stl_names ../dataset/cube.stl --printer_profiles ../printer_profiles/<N>_printer_profile_cylindrical_contour_1mm.json
 ```
-
-### Concentric tube robot (CTR) profiles
-To scale execution to multiple CTR printers, replace the `--printer_profiles` argument with one of the pre-configured system profiles:
+To scale execution to multiple CTR printers, add the desired N to the `--printer_profiles` argument with one of the pre-configured system profiles:
 
 | CTR Count | Profile Path |
 | :--- | :--- |
@@ -57,7 +55,7 @@ To scale execution to multiple CTR printers, replace the `--printer_profiles` ar
 
 ## Visualizing print paths
 
-Generated print paths can be viewed interactively with `plot_paths.py`.
+Generated print paths can be viewed interactively with `plot_paths.py`. The print paths used in the manuscript are included and can be visualized without slicing.
 
 ```bash
 python plot_paths.py --job_names <job_name> --printer_profiles ../printer_profiles/<N>_printer_profile_<profile_type>.json --load_data_path ../results/shells
