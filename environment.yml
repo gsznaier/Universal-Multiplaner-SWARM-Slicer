@@ -4,29 +4,11 @@ channels:
   - defaults
 dependencies:
   - python=3.10
-  - gcc_linux-64
-  - gxx_linux-64
-  - _libgcc_mutex
-  - _openmp_mutex
-  - bzip2
-  - ca-certificates
-  - ld_impl_linux-64
-  - libffi
-  - libgcc-ng
-  - libgomp
-  - libstdcxx-ng
-  - libuuid
   - multipledispatch
-  - ncurses
-  - openssl
+  - hnswlib
   - pip
-  - readline
   - setuptools
-  - sqlite
-  - tk
   - wheel
-  - xz
-  - zlib
   - pip:
     - --extra-index-url https://download.blender.org/pypi/
     - bpy==3.4.0
@@ -58,8 +40,6 @@ dependencies:
     - fonttools
     - freetype-py
     - glooey
-    - heart
-    - hnswlib
     - idna
     - imageio
     - importlib-metadata
