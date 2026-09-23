@@ -123,8 +123,7 @@ Print time is computed for each printhead from its path:
 | Move | Time |
 |---|---|
 | Printing | segment length / print speed |
-| Travel between segments in a layer | 2 × (5 mm retract / jog speed) + rotation angle / rotation speed |
-| Travel between layers | 5 mm retract / jog speed + rotation angle / rotation speed + (5 mm + change in radius) / jog speed |
+| Travel between segments | 2 × (5 mm retract / jog speed) + rotation angle / rotation speed |
 
 Rotation angles are measured about the cylinder axis, which is fitted to the first printed layer with `cylinder_fitting`.
 
