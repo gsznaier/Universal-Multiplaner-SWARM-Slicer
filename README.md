@@ -31,7 +31,7 @@ conda activate slicer
 # Install local package in editable mode
 pip install -e .
 ```
-
+The installation can take 5-10 minutes on a normal computer.
 ---
 
 ## Run instructions
