@@ -1,12 +1,27 @@
 # Universal Multiplaner SWARM Slicer
 
+## Prerequisites 
+
+This project uses [conda](https://docs.conda.io/) to manage its Python environment. You'll need one of the following installed: 
+
+- **[Miniconda](https://docs.anaconda.com/miniconda/)** (recommended, lightweight) 
+- **[Anaconda](https://www.anaconda.com/download)** (full distribution with many preinstalled packages
+
+You'll also need [Git](https://git-scm.com/downloads) to clone the repository. 
+
+To check that conda is installed and available in your terminal, run: 
+
+```bash conda --version ``` 
+
+> **Windows users:** Run the commands below in **Anaconda Prompt** (installed with Anaconda/Miniconda), or run `conda init` once so that `conda` works in PowerShell or Command Prompt. 
+
 ## Installation
 
 To install the software dependencies, run the following commands in your terminal:
 
 ```bash
 # Clone the repository
-git clone [https://github.com/gsznaier/Universal-Multiplaner-SWARM-Slicer.git](https://github.com/gsznaier/Universal-Multiplaner-SWARM-Slicer.git)
+git clone https://github.com/gsznaier/Universal-Multiplaner-SWARM-Slicer.git
 cd Universal-Multiplaner-SWARM-Slicer
 
 # Create and activate conda environment
@@ -21,35 +36,11 @@ pip install -e .
 
 ## Run Instructions
 
-### Option 1: Run via Job Profile
-Execute the slicer using a pre-configured JSON job profile:
+Execute the slicer by passing parameters directly through the command line:
 
 ```bash
-python main.py --job ../job_profiles/example_job_profile_hollow_cube.json
-```
-
-### Option 2: Run via Individual Parameters
-Alternatively, pass parameters directly through the command line:
-
-```bash
-python main.py \
-  --job_names hollow_cube \
-  --stl_names ../dataset/hollow_cube.stl \
-  --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json \
-  --obj_scale 5.0
-```
-
-### Option 3: Reload Existing Results
-To reload an already generated print job (e.g., to inspect or visualize without recomputing):
-
-```bash
-python main.py \
-  --job_names hollow_cube \
-  --stl_names ../dataset/hollow_cube.stl \
-  --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json \
-  --obj_scale 5.0 \
-  --load_data \
-  --load_data_path ../results/shells
+cd slicer
+python main.py --job_names cube --stl_names ../dataset/cube.stl --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json
 ```
 
 ### Concentric Tube Robot (CTR) Profiles
@@ -66,55 +57,38 @@ To scale execution to multiple CTR printers, replace the `--printer_profiles` ar
 
 ---
 
-## Visualization
+## Visualizing print paths
 
-Resulting toolpaths can be visualized interactively using Matplotlib or saved directly to an output directory using Matplotlib or Blender:
+Generated print paths can be viewed interactively with `plot_paths.py`.
 
 ```bash
-# Interactive visualization (Matplotlib)
-python main.py --job_names hollow_cube --stl_names ../dataset/hollow_cube.stl --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json --obj_scale 5.0 --load_data --load_data_path ../results/shells --visualize_fit --visualize_result matplotlib
-
-# Save Matplotlib renders to disk
-python main.py --job_names hollow_cube --stl_names ../dataset/hollow_cube.stl --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json --obj_scale 5.0 --load_data --load_data_path ../results/shells --visualize_fit --visualize_result matplotlib --save_visualization --save_visualization_path ../results/complete_job
-
-# Save Blender renders to disk
-python main.py --job_names hollow_cube --stl_names ../dataset/hollow_cube.stl --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json --obj_scale 5.0 --load_data --load_data_path ../results/shells --visualize_fit --visualize_result blender --save_visualization --save_visualization_path ../results/complete_job
+python plot_paths.py --job_names <job_name> --printer_profiles ../printer_profiles/<N>_printer_profile_<profile_type>.json --load_data_path ../results/shells
 ```
 
----
+| Placeholder | Description | Example |
+|---|---|---|
+| `<job_name>` | Shape/job to visualize | `benchy`, `bunny`, `duck`, `heart` |
+| `<N>` | Number of printheads (selects the `<job_name>_<N>_printers_...` results folder) | `1`, `2`, `4`, `6`, `8`, `14` |
+| `<profile_type>` | Remainder of the printer profile file name | `cylindrical_contour_1mm` |
 
-## Expected Output
+**Example:** visualize the bunny printed with 4 printheads:
 
-Once execution finishes, a JSON file containing all generated print paths will be generated. This file includes:
+```bash
+python plot_paths.py --job_names bunny --printer_profiles ../printer_profiles/6_printer_profile_cylindrical_contour_1mm.json --load_data_path ../results/shells
+```
 
-* **`printer info`**: Configuration of the Concentric Tube Robot (CTR), including position, orientation, resolution, safety radius, and geometric properties.
-* **`shell_method`**: Method used for generating print shells.
-* **`lower_u` / `upper_u`**: Control effort boundaries.
-* **`max_r` / `min_r`**: Radial extension limits of the CTR.
-* **`max_z_dist` / `min_z_dist`**: Z-axis extension limits.
-* **`potential_levels`**: Theoretical candidate shells for a given resolution.
-* **`levels`**: Executable shells commanded to the CTR, containing detailed shell paths and print masks.
+**Short form:**
 
-### Expected Visualization Sequence (Hollow Cube)
+```bash
+python plot_paths.py <job_name> <N>
+python plot_paths.py bunny 6
+```
 
-<table align="center">
-  <tr>
-    <td align="center"><img src="docs/images/printers_1_000001.png" width="220"/><br><sub>Frame 1</sub></td>
-    <td align="center"><img src="docs/images/printers_1_000002.png" width="220"/><br><sub>Frame 2</sub></td>
-    <td align="center"><img src="docs/images/printers_1_000003.png" width="220"/><br><sub>Frame 3</sub></td>
-    <td align="center"><img src="docs/images/printers_1_000004.png" width="220"/><br><sub>Frame 4</sub></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="docs/images/printers_1_000005.png" width="220"/><br><sub>Frame 5</sub></td>
-    <td align="center"><img src="docs/images/printers_1_000006.png" width="220"/><br><sub>Frame 6</sub></td>
-    <td align="center"><img src="docs/images/printers_1_000007.png" width="220"/><br><sub>Frame 7</sub></td>
-    <td align="center"><img src="docs/images/printers_1_000008.png" width="220"/><br><sub>Frame 8</sub></td>
-  </tr>
-</table>
+Running `python plot_paths.py` with no arguments lists all available jobs and prompts for one.
 
 ---
 
-## Software Versions
+## Tested software Versions
 
-* **Operating System:** Ubuntu 18.04.6 LTS
+* **Operating System:** Ubuntu 18.04.6 LTS, Windows 11 Education
 * **Python:** 3.10
