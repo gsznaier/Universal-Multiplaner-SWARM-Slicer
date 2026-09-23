@@ -17,7 +17,7 @@ To check that conda is installed and available in your terminal, run:
 
 ## Installation
 
-To install the software dependencies, run the following commands in your terminal:
+To install the software dependencies, run the commands below in your terminal. The installation can take 5-10 minutes on a normal computer.
 
 ```bash
 # Clone the repository
@@ -31,9 +31,7 @@ conda activate slicer
 # Install local package in editable mode
 pip install -e .
 ```
-The installation can take 5-10 minutes on a normal computer.
 ---
-
 ## Run instructions
 
 Execute the slicer by passing parameters directly through the command line:
