@@ -135,7 +135,7 @@ Rotation angles are measured about the cylinder axis, which is fitted to the fir
 
 These values are set at the top of `plot_print_times.py`.
 
-## Tested software Versions
+## Tested software versions
 
 * **Operating systems:** Ubuntu 18.04.6 LTS, Windows 11 Education
 * **Python:** 3.10
