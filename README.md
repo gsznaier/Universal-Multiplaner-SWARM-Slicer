@@ -1,4 +1,4 @@
-# Universal Multiplanar SWARM Slicer
+# Universal Multiplanar SWARM slicer
 
 ## Prerequisites 
 
@@ -34,7 +34,7 @@ pip install -e .
 
 ---
 
-## Run Instructions
+## Run instructions
 
 Execute the slicer by passing parameters directly through the command line:
 
@@ -43,7 +43,7 @@ cd slicer
 python main.py --job_names cube --stl_names ../dataset/cube.stl --printer_profiles ../printer_profiles/1_printer_profile_cylindrical_contour_1mm.json
 ```
 
-### Concentric Tube Robot (CTR) Profiles
+### Concentric tube robot (CTR) profiles
 To scale execution to multiple CTR printers, replace the `--printer_profiles` argument with one of the pre-configured system profiles:
 
 | CTR Count | Profile Path |
@@ -88,7 +88,7 @@ Running `python plot_paths.py` with no arguments lists all available jobs and pr
 
 ---
 
-## Tested software Versions
+## Tested software versions
 
-* **Operating System:** Ubuntu 18.04.6 LTS, Windows 11 Education
+* **Operating systems:** Ubuntu 18.04.6 LTS, Windows 11 Education
 * **Python:** 3.10
