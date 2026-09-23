@@ -1,4 +1,4 @@
-# Universal Multiplaner SWARM Slicer
+# Universal Multiplanar SWARM Slicer
 
 ## Prerequisites 
 
